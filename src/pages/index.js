@@ -1,12 +1,16 @@
 import Head from "next/head";
+import Header from "../components/Header";
 
 export default function Home() {
   return (
     <div>
       <Head>
-        <title>Amazon</title>
+        <title>Amazon.com. Spend less. Smile more.</title>
       </Head>
-      <>Hey</>
+      <Header />
+      {/* Banner */}
+      {/* Product Feed */}
+      {/* Footer */}
     </div>
   );
 }
