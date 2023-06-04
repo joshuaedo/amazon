@@ -58,7 +58,7 @@ export default function Header() {
             <Bars3Icon className="h-6 pr-1" />
             All
           </p>
-          <p className="link">Today's Deals</p>
+          <p className="link">Today&apos;s Deals</p>
           <p className="link">Customer Service</p>
           <p className="link">Registry</p>
           <p className="link">Gift Cards</p>
