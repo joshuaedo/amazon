@@ -19,13 +19,14 @@ export default function ProductFeed({ products }) {
           ))}
 
       {/* Ad */}
-      <img
-        className="md:col-span-full"
-        src="https://links.papareact.com/dyz"
-        // width="100vw"
-        // height="100%"
-        alt=""
-      />
+      <div className="md:col-span-full m-auto">
+        <Image
+          src="https://links.papareact.com/dyz"
+          width="1315"
+          height="215"
+          alt=""
+        />
+      </div>
 
       <div className="md:col-span-2">
         {products &&
