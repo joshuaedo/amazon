@@ -8,8 +8,6 @@ import {
 export default function Header() {
   return (
     <>
-      {/* Top Nav */}
-
       {/* Left-Top Nav */}
       <nav className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
         <div className="flex mt-2 items-center flex-grow sm:flex-grow-0">
@@ -51,6 +49,9 @@ export default function Header() {
           </div>
         </div>
       </nav>
+      
+      
+      
       {/* Bottom Nav */}
       <nav className="relative flex bg-amazon_blue-light text-white text-xs md:text-sm font-bold">
         <div className="flex items-center space-x-3 p-2 pl-5">
