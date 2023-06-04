@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import {
   Bars3Icon,
   MagnifyingGlassIcon,
@@ -19,6 +19,7 @@ export default function Header() {
             height={40}
             objectFit="contain"
             className="cursor-pointer"
+            alt=""
           />
         </div>
 
