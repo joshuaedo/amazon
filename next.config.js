@@ -7,6 +7,7 @@ const nextConfig = {
       "fakestoreapi.com",
       "m.media-amazon.com",
       "upload.wikimedia.org",
+      "companieslogo.com",
     ],
   },
 };
