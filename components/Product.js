@@ -43,13 +43,17 @@ export default function Product({
 
       {hasPrime && (
         <div className="flex items-center space-x-2 -mt-5">
-          <Image
-            src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Amazon_Prime_Logo.svg"
-            height="25"
-            width="40"
-            alt=""
-          />
-          <p className="text-xs text-gray-500">FREE Next Day Delivery</p>
+          <>
+            <Image
+              src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Amazon_Prime_Logo.svg"
+              height="25"
+              width="40"
+              alt=""
+            />
+          </>
+          <>
+            <p className="text-xs text-gray-500">FREE Next Day Delivery</p>
+          </>
         </div>
       )}
 
