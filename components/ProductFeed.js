@@ -1,5 +1,7 @@
-import Product from "./Product";
+// import Product from "./Product";
 import Image from "next/legacy/image";
+import dynamic from "next/dynamic";
+const Product = dynamic(() => import("./Product"), { ssr: false });
 
 export default function ProductFeed({ products }) {
   return (

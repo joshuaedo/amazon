@@ -8,6 +8,7 @@ const nextConfig = {
       "m.media-amazon.com",
       "upload.wikimedia.org",
       "companieslogo.com",
+      "images-na.ssl-images-amazon.com",
     ],
   },
 };
