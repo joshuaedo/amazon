@@ -105,10 +105,10 @@ export default function Checkout() {
 
               <div className="ml-6 bg-white flex items-center justify-center">
                 <div>
-                  <h1 className="text-2xl font-bold">
+                  <h1 className="text-xs md:text-2xl font-bold">
                     Your Amazon Cart is empty
                   </h1>
-                  <p className="text-blue-300 text-sm">
+                  <p className="text-blue-300 text-sm hidden md:flex">
                     Shop today&apos;s deals
                   </p>
                 </div>
