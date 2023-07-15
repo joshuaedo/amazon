@@ -40,12 +40,31 @@ export default function Product({
   };
 
   return (
-    <div className="relative flex flex-col m-5 bg-white z-30 p-10">
-      <p className="absolute top-2 right-2 italic text-gray-400">{category}</p>
+    <div className="relative flex flex-col mx-10 my-5 md:mx-5 bg-white z-30 p-5 md:p-10">
+      <p className="absolute top-2 right-2 italic text-gray-400 text-xs md:text-base">
+        {category}
+      </p>
 
-      <Image src={image} height={200} width={200} objectFit="contain" alt="" />
+      <div className="hidden md:flex justify-center items-center">
+        <Image
+          src={image}
+          height={200}
+          width={200}
+          objectFit="contain"
+          alt=""
+        />
+      </div>
+      <div className="flex md:hidden justify-center items-center">
+        <Image
+          src={image}
+          height={150}
+          width={150}
+          objectFit="contain"
+          alt=""
+        />
+      </div>
 
-      <h4 className="my-3">{title}</h4>
+      <h4 className="text-center my-3">{title}</h4>
 
       <div className="flex">
         {Array(rating)
@@ -57,7 +76,7 @@ export default function Product({
 
       <p className="text-xs my-2 line-clamp-2">{description}</p>
 
-      <div className="mb-5">
+      <div className="mb-8">
         <p>${price}</p>
       </div>
 
@@ -77,7 +96,7 @@ export default function Product({
         </div>
       )}
 
-      <button onClick={addItemToBasket} className="mt-auto button">
+      <button onClick={addItemToBasket} className="mt-5 button">
         Add to Basket
       </button>
     </div>

@@ -70,7 +70,7 @@ export default function Header() {
             All
           </p>
           <p className="link">Today&apos;s Deals</p>
-          <p className="link">Customer Service</p>
+          <p className="link hidden md:flex">Customer Service</p>
           <p className="link">Registry</p>
           <p className="link">Gift Cards</p>
           <p className="link">Sell</p>
