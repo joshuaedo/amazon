@@ -11,6 +11,9 @@ const nextConfig = {
       "images-na.ssl-images-amazon.com",
     ],
   },
+  env: {
+    stripe_public_key: process.env.STRIPE_PUBLIC_KEY,
+  },
 };
 
 module.exports = nextConfig;

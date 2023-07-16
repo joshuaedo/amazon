@@ -6,6 +6,9 @@ import Image from "next/legacy/image";
 import Link from "next/link";
 import { useSelector } from "react-redux";
 import { signIn, useSession } from "next-auth/react";
+import { loadStripe } from "@stripe/stripe-js";
+
+const stripePromise = loadStripe(process.env.stripe_public_key);
 
 export default function Checkout() {
   const items = useSelector(selectItems);
@@ -17,6 +20,12 @@ export default function Checkout() {
     } else {
       return false;
     }
+  };
+
+  const createCheckOutSession = async () => {
+    const stripe = await stripePromise;
+
+    // call backend to create a checkout sesh =)
   };
 
   return (
@@ -80,9 +89,11 @@ export default function Checkout() {
               <span className="font-bold">{/* <p>{total}</p> */}</span>
             </h2>
             {isAuthenticated() ? (
-              <button className="button mt-2">Proceed to Checkout</button>
+              <button role="link" className="button mt-2">
+                Proceed to Checkout
+              </button>
             ) : (
-              <button onClick={signIn} className="button mt-2">
+              <button role="link" onClick={signIn} className="button mt-2">
                 Sign in to Checkout
               </button>
             )}
