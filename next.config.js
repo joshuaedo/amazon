@@ -9,6 +9,7 @@ const nextConfig = {
       "upload.wikimedia.org",
       "companieslogo.com",
       "images-na.ssl-images-amazon.com",
+      "joshuaedo.sirv.com",
     ],
   },
   env: {

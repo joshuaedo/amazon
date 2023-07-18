@@ -22,7 +22,7 @@ export default function MetaHead(props) {
       <meta name="twitter:title" content="Prime. Spend less. Smile more." />
       <meta
         name="twitter:description"
-        content="Browse & discover millions of products."
+        content="Browse & discover millions of stuff."
       />
       <meta name="twitter:card" content="summary_large_image" />
       <meta
