@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import CheckoutProduct from "@/components/CheckoutProduct";
-import MetaHead from "@/components/MetaHead"
+import MetaHead from "@/components/MetaHead";
 import { selectItems } from "@/slices/basketSlice";
 import Image from "next/legacy/image";
 import Link from "next/link";
@@ -31,7 +31,7 @@ export default function Checkout() {
   return (
     <div className="bg-gray-100 h-screen">
       <MetaHead>
-        <title>Amazon.com Shopping Cart</title>
+        <title>Prime Shopping Cart</title>
       </MetaHead>
       <Header />
 

@@ -6,12 +6,9 @@ export default function MetaHead(props) {
         name="description"
         content="Browse & discover millions of products. Read customer reviews and find best sellers. We ship to over 100 international destinations, right to your doorstep."
       />
-      <meta name="title" content="Amazon Prime. Spend less. Smile more." />
+      <meta name="title" content="Prime. Spend less. Smile more." />
 
-      <meta
-        property="og:title"
-        content="Amazon Prime. Spend less. Smile more."
-      />
+      <meta property="og:title" content="Prime. Spend less. Smile more." />
       <meta
         property="og:description"
         content="Browse & discover millions of products."
@@ -19,13 +16,10 @@ export default function MetaHead(props) {
       <meta property="og:url" content="https://prime.joshuaedo.com" />
       <meta
         property="og:image:url"
-        content="https://m.media-amazon.com/images/G/31/social_share/amazon_logo._CB633266945_.png"
+        content="https://www.o2.co.uk/documents/1106106/6389453/v2-amazon-prime-casestudy-121222.jpg"
       />
 
-      <meta
-        name="twitter:title"
-        content="Amazon Prime. Spend less. Smile more."
-      />
+      <meta name="twitter:title" content="Prime. Spend less. Smile more." />
       <meta
         name="twitter:description"
         content="Browse & discover millions of products."
@@ -33,7 +27,7 @@ export default function MetaHead(props) {
       <meta name="twitter:card" content="summary" />
       <meta
         name="twitter:image"
-        content="https://m.media-amazon.com/images/G/31/social_share/amazon_logo._CB633266945_.png"
+        content="https://www.o2.co.uk/documents/1106106/6389453/v2-amazon-prime-casestudy-121222.jpg"
       />
 
       {props.children}

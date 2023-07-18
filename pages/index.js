@@ -7,7 +7,7 @@ export default function Home({ products }) {
   return (
     <div className="bg-gray-100">
       <MetaHead>
-        <title>Amazon.com. Spend less. Smile more.</title>
+        <title>Prime. Spend less. Smile more.</title>
       </MetaHead>
       <Header />
       <main className="max-w-screen-2xl mx-auto">
