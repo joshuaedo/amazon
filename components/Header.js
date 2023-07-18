@@ -18,18 +18,16 @@ export default function Header() {
     <>
       {/* Left-Top Nav */}
       <nav className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
-        <div className="flex mt-2 items-center flex-grow sm:flex-grow-0">
-          <Image
-            // src="https://companieslogo.com/img/orig/AMZN_BIG.D-8fb0be81.png?t=1632523695"
-            src="https://joshuaedo.sirv.com/prime/prime-logo.png"
-            width={100}
-            height={50}
-            objectFit="contain"
-            className="cursor-pointer"
-            alt=""
-            onClick={() => router.push("/")}
-          />
-        </div>
+        <Image
+          // src="https://companieslogo.com/img/orig/AMZN_BIG.D-8fb0be81.png?t=1632523695"
+          src="https://joshuaedo.sirv.com/prime/prime-logo.png"
+          width={100}
+          height={50}
+          objectFit="contain"
+          className="cursor-pointer"
+          alt=""
+          onClick={() => router.push("/")}
+        />
 
         {/* SearchBar */}
         <div className="hidden sm:flex items-center h-10 rounded-md flex-grow cursor-pointer  bg-yellow-300 hover:bg-yellow-500">
@@ -41,7 +39,7 @@ export default function Header() {
         </div>
 
         {/* Right-Top Nav */}
-        <div className="text-white flex items-center text-xs space-x-6 mx-6 whitespace-nowrap">
+        <div className="text-white flex items-center text-xs space-x-6 mr-6 ml-0 md:ml-6 whitespace-nowrap">
           <div className="link" onClick={session ? signOut : signIn}>
             <p>{session ? `Hello, ${session.user?.name}` : "Sign In"}</p>
             <p className="font-bold md:text-sm">Account & Lists</p>
