@@ -1,20 +1,14 @@
-import Head from "next/head";
+import MetaHead from "../components/MetaHead"
 import Banner from "../components/Banner";
 import Header from "../components/Header";
 import ProductFeed from "../components/ProductFeed";
-// import dynamic from "next/dynamic";
-// const Header = dynamic(() => import("../components/Header"), { ssr: false });
-// const Banner = dynamic(() => import("../components/Banner"), { ssr: false });
-// const ProductFeed = dynamic(() => import("../components/ProductFeed"), {
-//   ssr: false,
-// });
 
 export default function Home({ products }) {
   return (
     <div className="bg-gray-100">
-      <Head>
+      <MetaHead>
         <title>Amazon.com. Spend less. Smile more.</title>
-      </Head>
+      </MetaHead>
       <Header />
       <main className="max-w-screen-2xl mx-auto">
         <Banner />
