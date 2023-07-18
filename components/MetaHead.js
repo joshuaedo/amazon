@@ -24,7 +24,7 @@ export default function MetaHead(props) {
         name="twitter:description"
         content="Browse & discover millions of products."
       />
-      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:image"
         content="https://www.o2.co.uk/documents/1106106/6389453/v2-amazon-prime-casestudy-121222.jpg"
