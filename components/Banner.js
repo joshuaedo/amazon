@@ -2,8 +2,6 @@ import Image from "next/legacy/image";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-// test commit
-
 function CarouselImage({ src }) {
   return (
     <div className="h-auto md:h-screen">
@@ -12,9 +10,9 @@ function CarouselImage({ src }) {
         src={`https://m.media-amazon.com/images/I/${src}._SX10000_.jpg`}
         alt="CarouselImage"
         objectFit={true}
-        height={1200}
+        height={1800}
         width={3000}
-        className="object-contain"
+        className="object-cover bg-center"
       />
     </div>
   );
@@ -28,6 +26,7 @@ export default function Banner() {
         autoPlay
         infiniteLoop
         showStatus={false}
+        showArrows={false}
         showIndicators={false}
         showThumbs={false}
         interval={5000}
