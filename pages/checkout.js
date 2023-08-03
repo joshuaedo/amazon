@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import axios from "axios";
 import CheckoutProduct from "@/components/CheckoutProduct";
 import MetaHead from "@/components/MetaHead";
 import { selectItems } from "@/slices/basketSlice";
@@ -13,7 +14,7 @@ const stripePromise = loadStripe(process.env.stripe_public_key);
 export default function Checkout() {
   const items = useSelector(selectItems);
   const session = useSession();
-  console.log(session.status);
+  console.log(session);
   const isAuthenticated = () => {
     if (session.status === "authenticated") {
       return true;
@@ -28,7 +29,7 @@ export default function Checkout() {
     // call backend to create a checkout sesh =)
     const checkoutSession = await axios.post("/api/create-checkout-session", {
       items: items,
-      email: session.user.email,
+      email: session.data.user.email,
     });
   };
 
@@ -93,7 +94,11 @@ export default function Checkout() {
               <span className="font-bold">{/* <p>{total}</p> */}</span>
             </h2>
             {isAuthenticated() ? (
-              <button role="link" className="button mt-2">
+              <button
+                role="link"
+                className="button mt-2"
+                onClick={createCheckOutSession}
+              >
                 Proceed to Checkout
               </button>
             ) : (
