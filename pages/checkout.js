@@ -26,6 +26,10 @@ export default function Checkout() {
     const stripe = await stripePromise;
 
     // call backend to create a checkout sesh =)
+    const checkoutSession = await axios.post("/api/create-checkout-session", {
+      items: items,
+      email: session.user.email,
+    });
   };
 
   return (
