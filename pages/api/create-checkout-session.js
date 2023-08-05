@@ -5,13 +5,13 @@ export default async function StripeCheckoutSession(req, res) {
   const { items, email } = req.body;
 
   const transformedItems = items.map((item) => ({
-    description: item.description,
     quantity: 1,
     price_data: {
       currency: "usd",
       unit_amount: item.price * 100,
       product_data: {
         name: item.title,
+        description: item.description, //description here
         images: [item.image],
       },
     },
@@ -19,7 +19,28 @@ export default async function StripeCheckoutSession(req, res) {
 
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ["card"],
-    shipping_rate: ["shr_1Nbrn7L2XUCRIXaf73SpEJzS"],
+    shipping_options: [
+      {
+        shipping_rate_data: {
+          type: "fixed_amount",
+          fixed_amount: {
+            amount: 1000,
+            currency: "usd",
+          },
+          display_name: "Premium Delivery",
+          delivery_estimate: {
+            minimum: {
+              unit: "business_day",
+              value: 1,
+            },
+            maximum: {
+              unit: "business_day",
+              value: 3,
+            },
+          },
+        },
+      },
+    ],
     shipping_address_collection: {
       allowed_countries: ["GB", "US", "CA", "NG"],
     },
