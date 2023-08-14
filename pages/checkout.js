@@ -1,4 +1,3 @@
-import Header from "@/components/Header";
 import axios from "axios";
 import CheckoutProduct from "@/components/CheckoutProduct";
 import MetaHead from "@/components/MetaHead";
@@ -14,7 +13,11 @@ const stripePromise = loadStripe(process.env.stripe_public_key);
 export default function Checkout() {
   const items = useSelector(selectItems);
   const session = useSession();
-  console.log(session);
+
+  const totalPrice = items
+    .reduce((sum, item) => sum + item.price, 0)
+    .toFixed(2);
+
   const isAuthenticated = () => {
     if (session.status === "authenticated") {
       return true;
@@ -36,7 +39,6 @@ export default function Checkout() {
     const result = await stripe.redirectToCheckout({
       sessionId: checkoutSession.data.id,
     });
-
     if (result.error) alert(result.error.message);
   };
 
@@ -45,7 +47,6 @@ export default function Checkout() {
       <MetaHead>
         <title>Prime Shopping Cart</title>
       </MetaHead>
-      <Header />
 
       {/* Left */}
       {items.length > 0 ? (
@@ -59,24 +60,20 @@ export default function Checkout() {
               alt=""
             />
             <div className="flex flex-col p-5 space-y-10 bg-white">
-              <h1 className="text-3xl border-b pb-4 font-bold">
+              <h1 className="text-xl md:text-3xl border-b pb-4 font-bold">
                 Your Shopping Basket
               </h1>
-
               {items.map(
-                (
-                  {
-                    id,
-                    title,
-                    description,
-                    category,
-                    image,
-                    price,
-                    hasPrime,
-                    rating,
-                  },
-                  i
-                ) => (
+                ({
+                  id,
+                  title,
+                  description,
+                  category,
+                  image,
+                  price,
+                  hasPrime,
+                  rating,
+                }) => (
                   <CheckoutProduct
                     key={id}
                     id={id}
@@ -96,9 +93,8 @@ export default function Checkout() {
           {/* Right */}
 
           <div>
-            <h2 className="whitespace-nowrap">
-              Subtotal ({items.length} items):
-              <span className="font-bold">{/* <p>{total}</p> */}</span>
+            <h2 className="whitespace-nowrap font-semibold">
+              Subtotal: ${totalPrice} ({items.length} items)
             </h2>
             {isAuthenticated() ? (
               <button

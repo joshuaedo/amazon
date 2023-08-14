@@ -29,7 +29,7 @@ export default function Banner() {
         showArrows={false}
         showIndicators={false}
         showThumbs={false}
-        interval={5000}
+        interval={3000}
       >
         <CarouselImage src="61qa3132IFL" />
         <CarouselImage src="71tIrZqybrL" />
@@ -37,6 +37,11 @@ export default function Banner() {
         <CarouselImage src="61jovjd+f9L" />
         <CarouselImage src="61DUO0NqyyL" />
         <CarouselImage src="71qid7QFWJL" />
+        <CarouselImage src="61lwJy4B8PL" />
+        <CarouselImage src="71Ie3JXGfVL" />
+        <CarouselImage src="71U-Q+N7PXL" />
+        <CarouselImage src="81KkrQWEHIL" />
+        <CarouselImage src="81KkrQWEHIL" />
       </Carousel>
     </div>
   );

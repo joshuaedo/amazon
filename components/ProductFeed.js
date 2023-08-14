@@ -5,7 +5,7 @@ const Product = dynamic(() => import("./Product"), { ssr: false });
 
 export default function ProductFeed({ products }) {
   return (
-    <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-96 mx-auto">
+    <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-96 mx-auto px-2">
       {products &&
         products
           .slice(0, 4)
@@ -21,12 +21,13 @@ export default function ProductFeed({ products }) {
           ))}
 
       {/* Ad */}
-      <div className="md:col-span-full m-auto">
+      <div className="hidden md:flex col-span-full m-auto">
         <Image
           src="https://links.papareact.com/dyz"
           width="1315"
           height="215"
           alt=""
+          objectFit="contain"
         />
       </div>
 

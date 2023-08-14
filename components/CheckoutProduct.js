@@ -37,13 +37,31 @@ export default function CheckoutProduct({
   };
 
   return (
-    <div className="grid grid-cols-5">
+    <div className="grid grid-cols-1 md:grid-cols-5 md:place-items-center">
       {/* Left */}
-      <Image src={image} width={200} height={200} objectFit="contain" alt="" />
-
+      <>
+        <div className="hidden md:flex justify-center items-center">
+          <Image
+            src={image}
+            height={200}
+            width={200}
+            objectFit="contain"
+            alt=""
+          />
+        </div>
+        <div className="flex md:hidden justify-center items-center">
+          <Image
+            src={image}
+            height={150}
+            width={150}
+            objectFit="contain"
+            alt=""
+          />
+        </div>
+      </>
       {/* Middle */}
-      <div className="col-span-3 mx-5">
-        <p>{title}</p>
+      <div className="md:col-span-3 mx-5">
+        <p className="text-center md:text-start my-3 md:my-1">{title}</p>
         <div className="flex">
           {" "}
           {Array(rating)
@@ -53,7 +71,7 @@ export default function CheckoutProduct({
             ))}
         </div>
         <p className="text-xs my-2 line-clamp-3">{description}</p>
-        <p>${price}</p>
+        <p className="font-semibold">${price}</p>
 
         {hasPrime && (
           <div className="flex items-center space-x-2">
@@ -73,9 +91,9 @@ export default function CheckoutProduct({
       </div>
 
       {/* Right */}
-      <div className="flex flex-col space-y-2 my-auto justify-self-end">
-        <button onClick={addItemToCart} className="mt-auto button">
-          Add to Cart
+      <div className="flex flex-col space-y-2 my-auto md:justify-self-end">
+        <button onClick={addItemToCart} className="mt-2 md:mt-1 button">
+          Increase item quantity
         </button>
         <button onClick={removeItemFromCart} className="mt-auto button">
           Remove from Cart

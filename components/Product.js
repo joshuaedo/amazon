@@ -40,7 +40,7 @@ export default function Product({
   };
 
   return (
-    <div className="relative flex flex-col mx-10 my-5 md:mx-5 bg-white z-30 p-5 md:p-10">
+    <div className="relative flex flex-col mx-12 my-5 md:mx-5 bg-white z-30 p-5 md:p-10">
       <p className="absolute top-2 right-2 italic text-gray-400 text-xs md:text-base">
         {category}
       </p>
@@ -77,7 +77,7 @@ export default function Product({
       <p className="text-xs my-2 line-clamp-2">{description}</p>
 
       <div className="mb-8">
-        <p>${price}</p>
+        <p className="font-semibold">${price}</p>
       </div>
 
       {hasPrime && (
@@ -96,7 +96,10 @@ export default function Product({
         </div>
       )}
 
-      <button onClick={addItemToBasket} className="mt-5 button">
+      <button
+        onClick={addItemToBasket}
+        className={`button ${hasPrime && `mt-5`}`}
+      >
         Add to Basket
       </button>
     </div>

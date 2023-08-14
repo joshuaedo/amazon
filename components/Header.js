@@ -20,7 +20,6 @@ export default function Header() {
       <nav className="flex items-center bg-amazon_blue p-1 flex-grow py-2">
         <div className="w-16 flex align-bottom mx-3">
           <Image
-            // src="https://companieslogo.com/img/orig/AMZN_BIG.D-8fb0be81.png?t=1632523695"
             src="https://joshuaedo.sirv.com/prime/prime-logo.png"
             width={1000}
             height={500}
