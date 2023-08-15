@@ -40,7 +40,7 @@ export default function Product({
   };
 
   return (
-    <div className="relative flex flex-col mx-12 my-5 md:mx-5 bg-white z-30 p-5 md:p-10">
+    <div className="relative flex flex-col mx-auto my-5 md:mx-5 bg-white z-30 p-5 md:p-10">
       <p className="absolute top-2 right-2 italic text-gray-400 text-xs md:text-base">
         {category}
       </p>

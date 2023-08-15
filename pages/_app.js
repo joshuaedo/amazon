@@ -12,9 +12,11 @@ export default function App({
   return (
     <Provider store={store}>
       <SessionProvider session={session}>
-        <Header />
-        <Component {...pageProps} />
-        <Footer />
+        <div className="relative pb-[9vh] lg:pb-[12vh]">
+          <Header />
+          <Component {...pageProps} />
+          <Footer />
+        </div>
       </SessionProvider>
     </Provider>
   );

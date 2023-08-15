@@ -5,7 +5,7 @@ const Product = dynamic(() => import("./Product"), { ssr: false });
 
 export default function ProductFeed({ products }) {
   return (
-    <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-96 mx-auto px-2">
+    <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:-mt-96 mx-auto px-16 place-content-center">
       {products &&
         products
           .slice(0, 4)
