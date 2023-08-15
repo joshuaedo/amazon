@@ -1,5 +1,5 @@
 import { buffer } from 'micro';
-export * as admin from 'firebase-admin';
+import * as admin from 'firebase-admin';
 
 // connect to firebase on the backend
 const serviceAccount = require('../../permissions.json');
@@ -37,8 +37,8 @@ const fulfillOrder = async (session) => {
 export default async (req, res) => {
   if (req.method === 'POST') {
     const requestBuffer = await buffer(req);
-    const payload = requestBuffer.toString;
-    const sig = req.headers('stripe-signature');
+    const payload = requestBuffer.toString();
+    const sig = req.headers['stripe-signature'];
 
     let event;
 
