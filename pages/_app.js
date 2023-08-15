@@ -15,7 +15,6 @@ export default function App({
         <div className="relative pb-[9vh] lg:pb-[12vh]">
           <Header />
           <Component {...pageProps} />
-          <Footer />
         </div>
       </SessionProvider>
     </Provider>

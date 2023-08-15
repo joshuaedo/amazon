@@ -1,6 +1,7 @@
 import MetaHead from "../components/MetaHead";
 import Banner from "../components/Banner";
 import ProductFeed from "../components/ProductFeed";
+import Footer from "@/components/Footer";
 
 export default function Home({ products }) {
   return (
@@ -12,6 +13,7 @@ export default function Home({ products }) {
         <Banner />
         <ProductFeed products={products} />
       </main>
+      <Footer />
     </div>
   );
 }
