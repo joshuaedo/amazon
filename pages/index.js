@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export default function Home({ products }) {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-gray-100 pb-[9vh] lg:pb-[12vh]">
       <MetaHead>
         <title>Prime. Spend less. Smile more.</title>
       </MetaHead>
