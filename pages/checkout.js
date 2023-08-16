@@ -129,7 +129,7 @@ export default function Checkout() {
               <div className="ml-6 bg-white flex items-center justify-center">
                 <div>
                   <h1 className="text-xs md:text-2xl font-bold">
-                    Your Amazon Cart is empty
+                    Your Prime Cart is empty
                   </h1>
                   <p className="text-blue-300 text-sm hidden md:flex">
                     Shop today&apos;s deals
@@ -142,11 +142,11 @@ export default function Checkout() {
 
             <div className="space-y-3 items-center">
               <p className="text-xs">
-                The price and availability of items at Amazon.com are subject to
+                The price and availability of items at Prime are subject to
                 change. The Cart is a temporary place to store a list of your
                 items and reflects each item&apos;s most recent price.
-                <Link href="https://www.amazon.com/gp/help/customer/display.html/ref=ord_cart_lm?nodeId=468468">
-                  <span className="link text-blue-300"> Learn more</span>
+                <Link href="/">
+                  <span className="link text-blue-300"> Go home</span>
                 </Link>
                 <br />
                 Do you have a gift card or promotional code? We&apos;ll ask you
