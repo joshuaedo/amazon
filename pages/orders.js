@@ -3,9 +3,11 @@ import Order from "@/components/Order";
 import { db } from "@/firebase";
 import { collectionGroup, query, where, getDocs } from "firebase/firestore";
 import { getSession, signIn, useSession } from "next-auth/react";
+import { useRouter } from "next/router";
 
 export default function Orders({ orders }) {
   const session = useSession();
+  const router = useRouter();
 
   console.log(orders);
 
@@ -31,16 +33,32 @@ export default function Orders({ orders }) {
         <div className="p-12 bg-white shadow-sm mb-5">
           {isAuthenticated() ? (
             <div className="space-y-4 mt-5">
-              {orders?.map(
-                ({ amount, amount_shipping, timestamp, images }, i) => (
-                  <Order
-                    key={i}
-                    amount={amount}
-                    amountShipping={amount_shipping}
-                    timestamp={timestamp}
-                    images={images}
-                  />
+              {orders ? (
+                orders.map(
+                  ({ amount, amount_shipping, timestamp, images }, i) => (
+                    <Order
+                      key={i}
+                      amount={amount}
+                      amountShipping={amount_shipping}
+                      timestamp={timestamp}
+                      images={images}
+                    />
+                  )
                 )
+              ) : (
+                <h2 className="text-xs">
+                  You have no orders.{" "}
+                  <button
+                    role="link"
+                    onClick={() => {
+                      router.push("/");
+                    }}
+                    className="link text-blue-300"
+                  >
+                    Go
+                  </button>{" "}
+                  make one.
+                </h2>
               )}
             </div>
           ) : (
