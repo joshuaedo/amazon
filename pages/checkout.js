@@ -129,7 +129,7 @@ export default function Checkout() {
               <div className="ml-6 bg-white flex items-center justify-center">
                 <div>
                   <h1 className="text-xs md:text-2xl font-bold">
-                    Your Prime Cart is empty
+                    Your Cart is empty
                   </h1>
                   <p className="text-blue-300 text-sm hidden md:flex">
                     Shop today&apos;s deals
