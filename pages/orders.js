@@ -18,7 +18,7 @@ export default function Orders({ orders }) {
   };
 
   return (
-    <div className="bg-gray-100 h-screen">
+    <div className="bg-gray-100 min-h-screen">
       <MetaHead>
         <title>Your Orders</title>
       </MetaHead>
