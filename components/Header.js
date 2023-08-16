@@ -31,7 +31,7 @@ export default function Header() {
         </div>
 
         {/* SearchBar */}
-        <div className="hidden sm:flex items-center h-10 rounded-md flex-grow cursor-pointer  bg-yellow-300 hover:bg-yellow-500">
+        <div className="cursor-not-allowed hidden sm:flex items-center h-10 rounded-md flex-grow bg-yellow-300 hover:bg-yellow-500">
           <input
             type="text"
             className="p-2  h-full w-6 flex-grow rounded-l-md flex-shrink focus:outline-none"
@@ -40,12 +40,14 @@ export default function Header() {
         </div>
 
         {/* Right-Top Nav */}
-        <div className="text-white flex items-center text-xs space-x-6 mr-6 ml-0 md:ml-6 whitespace-nowrap">
+        <div className="text-white flex items-center text-xs space-x-6 mr-6 ml-2 md:ml-6 whitespace-nowrap">
           <div className="link" onClick={session ? signOut : signIn}>
-            <p>{session ? `Hello, ${session.user?.name}` : "Sign In"}</p>
-            <p className="font-bold md:text-sm">Account & Lists</p>
+            <p>{`Hello ${session ? ` ${session.user?.name}` : "there"},`}</p>
+            <p className="font-bold md:text-sm">{`Sign ${
+              session ? "Out" : "In"
+            }?`}</p>
           </div>
-          <div className="link">
+          <div className="link" onClick={() => router.push("/orders")}>
             <p>Returns</p>
             <p className="font-bold md:text-sm">& Orders</p>
           </div>
@@ -63,20 +65,20 @@ export default function Header() {
       </nav>
 
       {/* Bottom Nav */}
-      <nav className="relative flex bg-amazon_blue-light text-white text-xs md:text-sm font-bold">
+      <nav className=" cursor-not-allowed relative flex bg-amazon_blue-light text-white text-xs md:text-sm font-bold">
         <div className="flex items-center space-x-3 p-2 pl-5">
           <p className="font-extrabold flex items-center">
             <Bars3Icon className="h-6 pr-1" />
             All
           </p>
-          <p className="link">Today&apos;s Deals</p>
-          <p className="link hidden md:flex">Customer Service</p>
-          <p className="link">Registry</p>
-          <p className="link">Gift Cards</p>
-          <p className="link">Sell</p>
+          <p className="">Today&apos;s Deals</p>
+          <p className="hidden md:flex">Customer Service</p>
+          <p className="">Registry</p>
+          <p className="">Gift Cards</p>
+          <p className="">Sell</p>
         </div>
         <div className="hidden md:flex items-center absolute right-6 top-3">
-          <p className="link">Shop great deals now</p>
+          <p className="">Shop great deals now</p>
         </div>
       </nav>
     </>

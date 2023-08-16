@@ -30,9 +30,9 @@ export default function Orders({ orders }) {
             Your Orders
           </h1>
         </div>
-        <div className="p-12 bg-white shadow-sm mb-5">
+        <div className="p-6 md:p-12 bg-white shadow-sm mb-5">
           {isAuthenticated() ? (
-            <div className="space-y-4 mt-5">
+            <div className="space-y-4">
               {orders ? (
                 orders.map(
                   ({ amount, amount_shipping, timestamp, images }, i) => (
