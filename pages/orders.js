@@ -85,7 +85,8 @@ export async function getServerSideProps(context) {
   const orders = []; // Define the orders array outside the forEach loop
 
   querySnapshot.forEach((doc) => {
-    orders.push(JSON.parse(JSON.stringify(doc.data())));
+    doc.data()?.email === session.user?.email &&
+      orders.push(JSON.parse(JSON.stringify(doc.data())));
   });
 
   return {
