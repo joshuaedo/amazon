@@ -1,9 +1,8 @@
 import MetaHead from "@/components/MetaHead";
+import Order from "@/components/Order";
 import { db } from "@/firebase";
 import { collectionGroup, query, where, getDocs } from "firebase/firestore";
 import { getSession, signIn, useSession } from "next-auth/react";
-// import Image from "next/legacy/image";
-// import Link from "next/link";
 
 export default function Orders({ orders }) {
   const session = useSession();
@@ -31,7 +30,19 @@ export default function Orders({ orders }) {
         </div>
         <div className="p-12 bg-white shadow-sm mb-5">
           {isAuthenticated() ? (
-            <div className="space-y-4 mt-5"></div>
+            <div className="space-y-4 mt-5">
+              {orders?.map(
+                ({ amount, amount_shipping, timestamp, images }, i) => (
+                  <Order
+                    key={i}
+                    amount={amount}
+                    amountShipping={amount_shipping}
+                    timestamp={timestamp}
+                    images={images}
+                  />
+                )
+              )}
+            </div>
           ) : (
             <h2 className="text-xs">
               Please{" "}
@@ -55,7 +66,8 @@ export async function getServerSideProps(context) {
   const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
   // get the user credentials
-  const session = getSession(context);
+  const session = await getSession(context);
+  console.log(session.user.email);
 
   if (!session) {
     return {
@@ -63,14 +75,16 @@ export async function getServerSideProps(context) {
     };
   }
 
-  const q = query(collectionGroup(db, "orders"));
+  const q = query(
+    collectionGroup(db, "orders")
+    // where("email", "==", session.user.email)
+  );
 
   const querySnapshot = await getDocs(q);
 
   const orders = []; // Define the orders array outside the forEach loop
 
   querySnapshot.forEach((doc) => {
-    console.log(doc.id, " => ", doc.data());
     orders.push(JSON.parse(JSON.stringify(doc.data())));
   });
 
