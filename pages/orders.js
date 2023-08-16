@@ -9,8 +9,6 @@ export default function Orders({ orders }) {
   const session = useSession();
   const router = useRouter();
 
-  console.log(orders);
-
   const isAuthenticated = () => {
     if (session.status === "authenticated") {
       return true;
@@ -85,7 +83,7 @@ export async function getServerSideProps(context) {
 
   // get the user credentials
   const session = await getSession(context);
-  console.log(session.user.email);
+  // console.log(session.user.email);
 
   if (!session) {
     return {
