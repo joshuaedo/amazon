@@ -43,7 +43,7 @@ export default function Checkout() {
   };
 
   return (
-    <div className="bg-gray-100 h-screen">
+    <div className="bg-gray-100 min-h-screen">
       <MetaHead>
         <title>Prime Shopping Cart</title>
       </MetaHead>
@@ -85,7 +85,7 @@ export default function Checkout() {
                     hasPrime={hasPrime}
                     rating={rating}
                   />
-                )
+                ),
               )}
             </div>
           </div>
